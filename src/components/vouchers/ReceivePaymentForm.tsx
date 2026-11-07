@@ -82,8 +82,7 @@ export function ReceivePaymentForm({ module, voucherId, onClose, onSaved }: { mo
     setErrors((e) => (Object.keys(e).some((k) => !k.includes(".")) ? Object.fromEntries(Object.entries(e).filter(([k]) => k.includes("."))) : e));
   }, [h]);
 
-  // const definition = definitions.data?.find((d) => String(d.id) === h.transaction_definition_id);
-  const definition = true;
+  const definition = definitions.data?.find((d) => String(d.id) === h.transaction_definition_id);
 
 
   const allowedTypes = useMemo(() => {
